@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="packages/assets/pacy-logo.svg" alt="Pacy Logo">
+  <img src="packages/assets/pacy-logo.svg" alt="Pacy Logo" width=200px>
 </div>
 
 # Pacy Devtools
