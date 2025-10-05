@@ -25,5 +25,4 @@ For documentation, visit [pacy.dev/docs](https://pacy.dev/docs) where you'll fin
 - Docs: https://pacy.dev/docs
 - On X: https://x.com/PacyDev
 - On Github: https://github.com/pacy-dev
-- Inquiries: [email](mailto:hello@pacy.dev)
 
