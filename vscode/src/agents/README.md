@@ -1,0 +1,1 @@
+The strategy to send prompts to Windsurf and Copilot are taken from [Stagewise](https://github.com/stagewise-io/stagewise).

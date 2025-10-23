@@ -1,0 +1,13 @@
+{
+  "name": "pacy-devtools",
+  "version": "0.0.1",
+  "description": "A coding tool in your browser that connects to AI agents and IDEs, with devtools features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1"
+}

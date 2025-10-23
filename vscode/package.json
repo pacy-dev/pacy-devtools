@@ -1,0 +1,56 @@
+{
+  "name": "pacy-devtools-bridge",
+  "displayName": "Pacy DevTools Bridge",
+  "description": "VSCode integration for Pacy DevTools",
+  "version": "0.1.1",
+  "publisher": "pacy-devtools",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pacy-dev/vscode-bridge.git"
+  },
+  "private": true,
+  "engines": {
+    "vscode": "^1.96.2"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": []
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "NODE_ENV=production node esbuild.config.js",
+    "dev": "node esbuild.config.js --watch",
+    "pretest": "pnpm run compile",
+    "test": "jest",
+    "package": "pnpm exec vsce package --out ../tools/dist"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/semver": "^7.5.0",
+    "@types/vscode": "^1.96.2",
+    "@types/ws": "^8.5.10",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^2.15.0",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "chokidar": "^4.0.3",
+    "nanoid": "^5.1.5",
+    "nanostores": "^0.9.5",
+    "node-pty": "^1.0.0",
+    "semver": "^7.6.0",
+    "vite": "^6.3.5",
+    "ws": "^8.16.0",
+    "is-port-reachable": "^4.0.0"
+  }
+}
