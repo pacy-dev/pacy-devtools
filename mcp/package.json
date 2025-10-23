@@ -1,0 +1,39 @@
+{
+  "name": "@pacy-dev/mcp",
+  "version": "0.1.21",
+  "type": "module",
+  "description": "MCP for Pacy DevTools",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "pacy-devtools-mcp": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "vite build && shx chmod +x dist/cli.js",
+    "dev": "vite build --watch",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.1",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.28",
+    "@types/ws": "^8.5.10",
+    "nodemon": "^3.1.0",
+    "shx": "^0.3.4",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6",
+    "vite-plugin-dts": "^3.7.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
