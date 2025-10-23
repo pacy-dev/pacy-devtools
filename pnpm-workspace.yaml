@@ -2,3 +2,4 @@ packages:
 
 - 'packages/*'
 - 'mcp'
+- 'plugin-devtools'
