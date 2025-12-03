@@ -1,0 +1,116 @@
+---
+title: Usage
+description: Get started with Pacy DevTools in minutes
+sidebar:
+  order: 1
+frontmatter:
+  label: Pacy Devtools Usage
+---
+
+import { Card, CardGrid, LinkCard, Badge, Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components'
+import TechnologyTable from '../../components/TechnologyTable.astro'
+import TechnologyTableRow from '../../components/TechnologyTableRow.astro'
+import TechnologyLogo from '../../components/TechnologyLogo.astro'
+import TechnologySeparator from '../../components/TechnologySeparator.astro'
+
+You can easily set up **Pacy Devtools** with an existing project, or you can scaffold a new project from the CLI. 
+
+## Installation
+
+1. First, install **Pacy Devtools** globally using `npm i -g pacy-devtools`. If you're going to use **Pacy Devtools** only with **Claude Code** or **Codex**, you can skip the following steps.
+2. Install the IDE extension using the following link:
+    - <a href="vscode:extension/pacy-devtools.pacy-devtools-bridge">Install VSCode Extension</a>
+    - <a href="cursor:extension/pacy-devtools.pacy-devtools-bridge">Install Cursor Extension</a>
+    - <a href="windsurf:extension/pacy-devtools.pacy-devtools-bridge">Install Windsurf Extension</a>
+3. Then, install the MCP server using `pacy install-mcp` command. This CLI command will walk you through the process to install the MCP server for multiple AI agents at once. This step is crucial for receiving messages back from your AI agents.
+
+## Creating a new project
+
+To create a new Vite project with Pacy Devtools, use one of these commands:
+
+<Tabs>
+<TabItem label="npm">
+```bash
+npm create pacy@latest
+```
+</TabItem>
+<TabItem label="Yarn">
+```bash
+yarn create pacy
+```
+</TabItem>
+<TabItem label="pnpm">
+```bash
+pnpm create pacy
+```
+</TabItem>
+<TabItem label="Deno">
+```bash
+deno init --npm pacy
+```
+</TabItem>
+</Tabs>
+
+This will set up a new project with Pacy Devtools already configured and ready to use. 
+The installation will walk you through the steps to select one of the following options:
+
+- React (`react`, `react-ts`, `react-swc`, `react-swc-ts`)
+- Vue (`vue`, `vue-ts`)
+- Svelte (`svelte`, `svelte-ts`)
+- Preact (`preact`, `preact-ts`)
+- Solid (`solid`, `solid-ts`)
+- Qwik (`qwik`, `qwik-ts`)
+
+These are adapted from official [Vite templates](https://vite.dev/guide/#scaffolding-your-first-vite-project).
+
+## Using with an existing project
+
+Using it with an existing project is also a simple, two-step process.
+
+<Steps>
+
+1. **Configure the project**
+
+    This step might be optional depending on the project, but it's recommended.
+
+    **Pacy** works out of the box with React (v17-18), Vue, and Svelte, when used with Vite.
+    For other setups, a bundler plugin called `@pacy-dev/plugin-devtools` is used.
+    You can use [this guide](/framework-configuration) to configure your project.
+
+
+2. **Run your project with `pacy`**
+
+    Simply run `pacy` instead of your "npm run dev" command. 
+    If you're using a custom dev command, you can use `pacy -c "npm run dev"` with your custom command.
+
+    <details>
+    <summary>How this works</summary>
+
+    This command will detect your npm client and it will run the `dev` command if it exists in the **package.json**.
+    While running the command, it will detect the port of your dev server, and run a proxy server with the Pacy Devtools UI.
+    You'll see a message in the terminal such as: `Pacy Devtools: 5173 -> http://localhost:15173`.
+    You can also use the `--port` or `-p` option to specify the port of your dev server instead of detecting it automatically.
+
+    </details>
+</Steps>
+
+**Happy building! 🚀**
+
+
+
+
+
+## What's Next?
+
+<CardGrid>
+  <LinkCard 
+    title="Framework Configuration" 
+    href="/docs/framework-configuration"
+    description="How to configure your project for Pacy"
+  />
+  <LinkCard 
+    title="Troubleshooting" 
+    href="/docs/troubleshooting"
+    description="How to fix issues you might encounter"
+  />
+</CardGrid> 

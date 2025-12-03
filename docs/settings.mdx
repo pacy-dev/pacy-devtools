@@ -1,0 +1,53 @@
+---
+title: Settings
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+{/* ## Global settings
+Global settings are located on the "Options" page and apply to all hosts. They are:
+
+- Port number (default: `25925`)
+- Custom URL protocols
+
+### Port number
+Specify the WebSocket port that will be used to connect to the Pacy CLI. 
+The default value is `25925`. 
+After you set port number of the Pacy CLI using the `pacy set-port <port>` command, you should change it here manually.
+If you don't know what port number the Pacy CLI is using, you can find it by running `pacy get-port` in the terminal.
+
+### Custom URL protocols
+
+You can use this section to add support for "Navigate to code" feature for editors other than VS Code, Windsurf, or Cursor. */}
+
+## Per-host settings
+
+Per-host settings apply to a specific host, identified by its domain name or IP address.
+For example, if you have a local development server at `http://localhost:3000`, and adjust any per-host settings of Pacy on that host, those changes are remembered the next time you visit the same host.
+
+Here are the settings that are per-host:
+
+- AI agent (default: `Claude Code`)
+- URL protocol (default: `vscode://`, inferred automatically when using agents other than **Claude Code**)
+- Path prefix (Inferred automatically when using `@pacy-dev/devtools-plugin` and in some other cases)
+
+<Aside>
+If **Pacy** encounters a brand-new host, and if you have recently overriden AI agent or URL protocol settings for a previous host,
+the new host will start off with the same values. For instance, if you selected `RooCode` instead of `Claude Code` on previous host in `http://localhost:3000`, if Pacy encounters a new host in `http://localhost:5173` for the first time, the AI agent will be set to `RooCode`.
+</Aside>
+
+{/* ### AI agent
+This is the AI agent that receives your prompts. You can change this from the AI agents dropdown in the Chat tool. */}
+
+### URL protocol
+
+This setting determines the link that is opened when you click on "Navigate to code".
+You don't need to manually set this when using Cline, RooCode, VS Code, Windsurf, Cursor.
+You only need to set this when using **Claude Code** or **Codex**.
+The default value is `vscode://`. 
+In the three-dots menu under "URL protocol", you can instead choose `cursor://` or `windsurf://`, or a custom URL protocol you've created.
+
+### Path prefix
+
+This is the root directory of your project.
+When you use `@pacy-dev/devtools-plugin` you don't need to set this manually as it will be inferred automatically from the nearest git root.

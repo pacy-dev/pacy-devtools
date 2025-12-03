@@ -19,9 +19,9 @@ This is an MCP server that communicates with Pacy DevTools. It informs the devto
 
 ### `plugin-devtools`
 
-- Currently mostly a wrapper of `code-inspector`, but we chose to use it by wrapping it, since we override some default settings. Also, in case of using it for more features in the future.
+Currently mostly a wrapper of `code-inspector`, but we chose to use it by wrapping it, since we override some default settings. Also, in case of using it for more features in the future.
 
 ### `vscode`
 
-- This package is not included in the `pnpm-workspace.yaml`, because the `vsce package` command fails to run with the symlinked dependencies in the `node_modules`.
+This package is not included in the `pnpm-workspace.yaml`, because the `vsce package` command fails to run with the symlinked dependencies in the `node_modules`.
 

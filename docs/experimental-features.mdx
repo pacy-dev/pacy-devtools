@@ -1,0 +1,17 @@
+---
+title: Experimental features
+sidebar:
+  order: 1
+---
+
+Currently, Pacy Devtools supports the following experimental features:
+
+- **Console Tab**: Browse the console logs of your application. (Disabled by default)
+- **Network Tab**: Browse network requests of your application. (Disabled by default)
+
+These features are marked as experimental, because they require intercepting the `console`, `fetch`, and `XHR` APIs.
+This is not a problem for most of the applications, but it might interfere with the error stack traces for some applications.
+
+You can enable them from the Settings page. 
+To go to the Settings page, click the three-dots icon in the top right corner of the Pacy Devtools island,
+and select it from the dropdown menu. After toggling experimental features, you should refresh the browser for changes to take effect.

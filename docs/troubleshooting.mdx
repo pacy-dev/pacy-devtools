@@ -1,0 +1,95 @@
+---
+title: Troubleshooting  
+description: Troubleshooting the problems you might encounter
+---
+
+import { Card, CardGrid, LinkCard, Badge, Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components'
+import TechnologyTable from '../../components/TechnologyTable.astro'
+import TechnologyTableRow from '../../components/TechnologyTableRow.astro'
+import TechnologyLogo from '../../components/TechnologyLogo.astro'
+import TechnologySeparator from '../../components/TechnologySeparator.astro'
+
+This guide covers common issues you might encounter while using Pacy and their solutions.
+
+## Installation Issues
+
+### IDE Extension Installation Issues
+
+Installation from the command line might not work for some users.
+Here, we provide 2 more alternative ways to install the extension.
+
+#### Install from a link
+
+You can install the extension to VSCode from the following link:
+
+- <a href="vscode:extension/pacy-devtools.pacy-devtools-bridge">Install VSCode Extension</a>
+- <a href="cursor:extension/pacy-devtools.pacy-devtools-bridge">Install Cursor Extension</a>
+- <a href="windsurf:extension/pacy-devtools.pacy-devtools-bridge">Install Windsurf Extension</a>
+
+For Cursor and Windsurf, you can download the following file and drag and drop it to your editor's extensions tab:
+- <a href="https://github.com/pacy-dev/pacy-devtools/raw/refs/heads/main/packages/vscode/pacy-devtools-bridge-0.1.1.vsix">Pacy Devtools Bridge</a>
+
+#### Manual Installation
+
+If these links don't work, or you'd like to use pacy with another VSCode-based editor, you can search "Pacy Devtools Bridge" in your editor, or you can download the `.vsix` file from the following link, and later drag and drop it into your editor's extensions tab:
+
+- <a href="https://marketplace.visualstudio.com/items?itemName=pacy-devtools.pacy-devtools-bridge">Pacy Devtools Bridge in VSCode Marketplace</a>
+
+<Aside title='Hint'>
+
+A VS Code extension's offline install package (VSIX) is available at:
+
+```
+https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${extension name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage
+```
+</Aside>
+
+### MCP Installation Issues
+
+#### Manual Installation
+
+For manually installing the MCP server, you can add this to your AI agent's MCP configuration file:
+
+```json
+{
+  "mcpServers": {
+    "pacy-devtools": {
+      "command": "npx",
+      "args": ["--yes", "@pacy-dev/mcp"]
+    }
+  }
+}
+```
+
+{/* Here are some configuration file locations:
+
+- Cline: `${BASEDIR}/${EDITOR}/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`,
+- RooCode: `${BASEDIR}/${EDITOR}/User/globalStorage/rooveterinaryinc.roo-cline/settings/mcp_settings.json`,
+- Windsurf: `${HOMEDIR}/.codeium/windsurf/mcp_config.json`,
+- Cursor: `${HOMEDIR}/.cursor/mcp.json`,
+- VSCode: `${BASEDIR}/Code/User/settings.json`
+
+`${EDITOR}` is the name of the editor you're using. Remember that it's `Code` for VSCode, `Cursor` for Cursor, and `Windsurf` for Windsurf.
+
+You can fill the `${BASEDIR}`, `${HOMEDIR}` based on your OS. */}
+
+{/* ## Connection Issues
+
+If you're having trouble connecting to the Pacy CLI, you can try the following solutions:
+
+1. Validate if the Pacy CLI is running by running `pacy status` in the terminal.
+
+2. If it's not running, start it by running `pacy start`. The problem might be resolved.
+
+3. Make sure that the port number from the `pacy status` command is the same as the one in the browser extension settings.
+
+4. If none of the above works, you can use a different port by running `pacy set-port <port>` in the terminal. 
+Don't forget to update the port in the browser extension settings as well. The problem might be resolved. */}
+
+## Code Inspector Issues
+
+### Code inspector is showing the right file path, but the line number is wrong
+
+1. Use `@pacy-dev/devtools-plugin` to configure your project.
+2. If you're using React with Vite, and if the `@vitejs/plugin-react` or `@vitejs/plugin-react-swc` is listed among the plugins, make sure `@pacy-dev/devtools-plugin` comes before.
+3. Similarly, if you're using Vue, Svelte or any other framework, make sure `@pacy-dev/devtools-plugin` comes before the framework's plugin.

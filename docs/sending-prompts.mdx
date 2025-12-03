@@ -1,0 +1,27 @@
+---
+title: Sending prompts to AI agents
+description: Important limitations and considerations when using Pacy
+---
+
+## Terminal agents
+
+These are the class of AI agents that have the most straightforward integration, with the least amount of setup required. 
+Both of these agents run with full access to your system, with the following flags. Please use with caution and understand the security implications.
+
+### Claude Code
+- It runs with `--dangerously-skip-permissions` flag.
+
+### Codex
+- It runs with `--ask-for-approval never` flag.
+
+## IDE agents
+
+### Cline, RooCode
+- Since they are fast-moving projects, support for them might occasionally break, but expect it to be restored soon.
+
+### Considerations for other AI agents
+- Continued support for other AI agents is not guaranteed and is subject to changes in their APIs or policies.
+
+## Important note
+
+- To receive updates/notifications from the agents, you must enable auto-approval for the Pacy Devtools MCP server. The process varies depending on your editor or extension.

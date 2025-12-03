@@ -1,0 +1,88 @@
+---
+title: Changelog
+---
+
+Notable changes to this project will be documented in this document.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.1.17] - 2025-11-23
+
+### Added
+- **Task list display**: Added collapsible tooltip that shows Codex planning tasks.
+- **Computed styles**: The CSS inspector panel now displays computed styles, and automatically falls back to them when no stylesheet rule is available.
+- **CLI-based file opening**: A new file opening method that does not rely on URL protocols such as `code://` or `cursor://`. It's disabled by default and can be enabled from settings.
+- **Word-level diffs**: Patch view now supports word-level diffs for more precise change visualization.
+
+### Fixed
+- Use a special equality check function for classlists to avoid listing class order changes.
+- Prevent the same element from being listed multiple times when multiple classes are added or removed.
+
+
+## [0.1.16] - 2025-11-12
+
+### Added
+- **Codex CLI Integration**: Integration with OpenAI Codex is enabled. It's no longer marked as experimental.
+- **Broader DOM sourcemap support**: Automatically detect sourcemaps from Lovable projects. (No need to use the **@pacy-dev/plugin-devtools**)
+- **Better indication of session changes**: Show a yellow indicator dot next to the CSS inspector icon when there are text content, class list or stylesheet changes
+- Elements inspector shows overlays when an HTML element is hovered
+
+
+## [0.1.15] - 2025-10-30
+
+### Added
+- **Codex CLI Integration (Experimental)**: Integration with OpenAI Codex is added as an experimental feature. It's disabled by default and it can be enabled from the settings
+- **Classlist Change Tracking**: Track and manage classlist changes
+- **Advanced Patch Viewer**: 
+  - View all your changes with an improved diff interface
+  - Added individual change revert functionality - you can now revert changes one at a time
+  - Filter patches by type with visible counts
+  - Visual icons for different types of changes
+  - Highlight multiple related elements simultaneously
+
+### Fixed
+- Prevented duplicate task update messages from appearing
+- Better UI with custom dark scrollbars
+
+## [0.1.12] - 2025-10-17
+
+### Added
+- **CSS Changes Banner**: Track and manage stylesheet rule, inline styles, and text content changes
+- **Git Panel**: Refresh button added to update your git status on demand
+
+### Changed
+- **Chat Interface**: Better overflow handling for long conversations
+- **Panel Positioning**: Panels now adjust better to dynamic content height changes
+
+### Fixed
+- Fixed diff comparison in projects not located at git root
+
+## [0.1.11] - Base version - 2025-10-9
+
+### AI Agent Integrations
+- **Claude Code Integration**: Full support for Claude Code with real-time chat interface
+- **Integraton for IDE-based AI agents**: Ability to send messages to the following agents. Also an agent-agnostic MCP server to receive task updates/summaries from them.
+  - Cursor
+  - Windsurf
+  - VSCode
+  - Cline
+  - RooCode
+
+### Panels
+- **Inspect**: Multiple inspection modes based on selecting an element from the DOM. This feature has the following modes of inspection:
+  - **Chat**: Directly send a prompt about the currently selected element
+  - **Edit**: If sourcemaps are available, edit the component directly from a panel.
+  - **Elements**: Inspect the DOM hierarchy.
+  - **CSS**: Toggle, add, remove stylesheet rules, inline styleas and class names.
+  - **Spacing**: Measure the distance between two containers
+- **Agent**: Displays the messaging interface with AI Agents
+- **Changes**: Review the diff of the changes, approve, or reject them.
+- **Console**: Browser console log viewing and JavaScript execution (experimental, enabled from Settings)
+- **Network**: Fetch/XHR request monitoring and response inspection (experimental, enabled from Settings)
+
+### Extension and Plugin Ecosystem
+- **VSCode Extension**: Seamless VSCode extension for communication with the browser that handles multiple VSCode windows
+- **@pacy-dev/plugin-devtools**: A bundler plugin for enabling sourcemaps for multiple frameworks based on the code-inspector-plugin package.
+- **MCP Server**: Model Context Protocol server for receiving task updates from editor-based AI agents
+

@@ -1,0 +1,114 @@
+---
+title: Pacy Devtools Overview
+description: Get started with Pacy DevTools in minutes
+sidebar:
+  order: 1
+frontmatter:
+  label: Pacy Devtools Overview
+---
+
+import { Card, CardGrid, LinkCard, Badge, Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components'
+import TechnologyTable from '../../components/TechnologyTable.astro'
+import TechnologyTableRow from '../../components/TechnologyTableRow.astro'
+import TechnologyLogo from '../../components/TechnologyLogo.astro'
+import TechnologySeparator from '../../components/TechnologySeparator.astro'
+
+**Pacy Devtools** is a coding tool in the browser that connects to your AI agents. 
+By letting you interact with your code directly within the browser, it streamlines your development workflow, and helps you iterate faster.
+
+Apart from the AI features, it's still useful as you can target elements with the full context to the specific lines of code, along with having some browser devtools features, and IDE features together.
+
+Without leaving the browser, you can:
+
+- **Send prompts to your IDEs and CLI tools.**
+- **Receive task updates/summaries.**
+- **Review the diff of the changes, approve, or reject them.**
+
+It also comes with features that don't require AI:
+
+- **Navigate to a specific line of code in your IDE.**
+- **Edit relevant source code directly from a panel.** 
+- **Inspect spacing, like in design tools.**
+
+Also, it has the following browser devtools features:
+
+- **Elements inspector**
+- **CSS inspector**
+- **Console & Network tabs**
+
+Here are the frameworks, bundlers, and AI agents that **Pacy Devtools** supports.
+
+<TechnologyTable>
+  <TechnologyTableRow category="Terminal Agents">
+    <TechnologyLogo src="claude.svg" alt="Claude Code" />
+    <TechnologyLogo src="openai.svg" alt="Codex" />
+  </TechnologyTableRow>
+  <TechnologyTableRow category="IDE Agents">
+    <TechnologyLogo src="vscode.svg" alt="VSCode" />
+    <TechnologyLogo src="cursor.svg" alt="Cursor" />
+    <TechnologyLogo src="windsurf.svg" alt="Windsurf" />
+    <TechnologySeparator/>
+    <TechnologyLogo src="cline.svg" alt="Cline" />
+    <TechnologyLogo src="roocode.svg" alt="RooCode" />
+  </TechnologyTableRow>
+  <TechnologyTableRow category="Frameworks">
+    <TechnologyLogo src="react.svg" alt="React" />
+    <TechnologyLogo src="vue.png" alt="Vue" />
+    <TechnologyLogo src="svelte.png" alt="Svelte" />
+    <TechnologyLogo src="nextjs.svg" alt="Next.js" />
+    <TechnologyLogo src="remix.svg" alt="Remix" />
+    <TechnologyLogo src="preact.svg" alt="Preact" />
+    <TechnologyLogo src="nuxt.svg" alt="Nuxt" />
+    <TechnologyLogo src="astro.svg" alt="Astro" />
+    <TechnologyLogo src="solid.png" alt="Solid" />
+    <TechnologyLogo src="qwik.svg" alt="Qwik" />
+  </TechnologyTableRow>
+    <TechnologyTableRow category="Bundlers">
+    <TechnologyLogo src="vite.svg" alt="Vite" />
+    <TechnologyLogo src="webpack.svg" alt="Webpack" />
+    <TechnologyLogo src="esbuild.svg" alt="esbuild" />
+    <TechnologyLogo src="turbopack.svg" alt="Turbopack" />
+    <TechnologyLogo src="rspack.svg" alt="Rspack" />
+  </TechnologyTableRow>
+  {/* <TechnologyTableRow category="Browsers">
+    <TechnologyLogo src="chrome.svg" alt="Chrome" />
+    <TechnologyLogo src="edge.svg" alt="Edge" />
+    <TechnologyLogo src="arc.svg" alt="Arc" />
+    <TechnologyLogo src="opera.png" alt="Opera" />
+  </TechnologyTableRow> */}
+</TechnologyTable>
+
+{/* ## Why?
+
+Modern development has changed, but our tools haven't.
+
+As developers, we are increasingly interacting with AI, yet we still jump between browser tabs, devtools, and our editor just to do something simple: inspect a UI, tweak some code, or ask an AI assistant a question.
+This constant context-switching slows us down and pulls us out of flow.
+
+That's why we developed **Pacy Devtools**. It can immensely reduce context switch, by bringing the UI you're working on with the browser console, elements inspector */}
+
+
+## What's Next?
+
+<CardGrid>
+  <LinkCard 
+    title="Usage" 
+    href="/docs/usage"
+    description="How to start using Pacy"
+  />
+  <LinkCard 
+    title="Framework Configuration" 
+    href="/docs/framework-configuration"
+    description="How to configure your project for Pacy"
+  />
+  {/* <LinkCard 
+    title="Features Overview" 
+    href="/features"
+    description="Explore all the powerful features"
+  />
+  <LinkCard 
+    title="Troubleshooting" 
+    href="/troubleshooting"
+    description="How to fix issues you might encounter"
+  /> */}
+</CardGrid> 

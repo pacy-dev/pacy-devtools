@@ -1,0 +1,74 @@
+---
+title: CLI Reference
+description: Reference for the Pacy Devtools CLI
+---
+
+## Commands
+
+### Main Command
+```bash
+pacy dev [options]
+```
+
+**Options:**
+- Leave blank to auto-detect and proxy your development server
+- `-p, --port <port>` - Proxy specific port
+- `-c, --command <command>` - Run specific command with port detection
+
+
+**Examples:**
+```bash
+# Auto-detect and proxy your development server
+pacy
+
+# Run with a specific command
+pacy --command "npm run dev"
+
+# Proxy a specific port
+pacy --port 3000
+```
+### Installation Commands
+
+#### Install MCP Server
+```bash
+pacy install-mcp
+```
+Installs the MCP (Model Context Protocol) server for AI agents like VSCode, Cursor, Windsurf, Cline, RooCode.
+
+{/* #### Install IDE Extension
+```bash
+pacy install-bridge
+```
+Installs the Pacy Devtools extension for IDEs like VSCode, Cursor, Windsurf.  */}
+
+### Authentication Commands
+
+#### Check Authentication Status
+```bash
+pacy whoami
+```
+Shows current user information and device details.
+
+#### Logout
+```bash
+pacy logout
+```
+Sign out and clear local authentication tokens.
+
+## How It Works
+
+### Development Server Proxying
+
+Pacy Devtools automatically:
+
+1. **Detects** your development server ports (common frameworks supported)
+2. **Proxies** traffic through an available port 
+3. **Injects** debugging tools and WebSocket connections
+4. **Preserves** all original functionality while adding development features
+
+### Port Detection
+
+The CLI intelligently detects development servers by:
+- Parsing package.json scripts for port configurations
+- Watching for new services that start up
+- Avoiding conflicts with existing services
