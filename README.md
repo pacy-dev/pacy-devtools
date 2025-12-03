@@ -15,9 +15,11 @@ For documentation, visit [pacy.dev/docs](https://pacy.dev/docs) where you'll fin
 - [Usage](https://pacy.dev/docs/usage)
 - [Framework configuration](https://pacy.dev/docs/framework-configuration)
 - [Sending prompts](https://pacy.dev/docs/sending-prompts)
+- [Experimental features](https://pacy.dev/docs/experimental-features)
 - [Troubleshooting](https://pacy.dev/docs/troubleshooting)
 - [Settings](https://pacy.dev/docs/settings)
 - [CLI Reference](https://pacy.dev/docs/cli-reference)
+- [Changelog](https://pacy.dev/docs/changelog)
 
 ## Links
 
