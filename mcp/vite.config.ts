@@ -20,10 +20,6 @@ export default defineConfig({
           return true;
         }
 
-        if (id.startsWith('@pacy/shared')) {
-          return false;
-        }
-
         return false;
       },
     },
