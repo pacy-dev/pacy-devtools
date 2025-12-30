@@ -1,3 +1,5 @@
+The VSIX file in this directory is mentioned in the "troubleshooting.mdx" as "https://github.com/pacy-dev/pacy-devtools/raw/refs/heads/main/packages/vscode/pacy-devtools-bridge-0.1.1.vsix".
+
 This file is solely for manually installing, and it may be outdated. To find the latest version of the extension, please refer to one of the following links:
 
 - <a href="vscode:extension/pacy-devtools.pacy-devtools-bridge">Install VSCode Extension</a>

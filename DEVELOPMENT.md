@@ -7,9 +7,9 @@
 
 This repository serves mostly as a hub for the GitHub issues and bug reports for Pacy Devtools, but it also involves the following packages:
 
-- `mcp` is distributed as `@pacy-dev/mcp`.
-- `plugin-devtools` is distributed as `@pacy-dev/plugin-devtools`.
-- `vscode` is uploaded to Visual Studio Code Marketplace as "Pacy Devtools Bridge".
+- `packages/mcp` is distributed as `@pacy-dev/mcp`.
+- `packages/plugin-devtools` is distributed as `@pacy-dev/plugin-devtools`.
+- `packages/vscode-extension` is uploaded to Visual Studio Code Marketplace as "Pacy Devtools Bridge".
 
 Currently, the rest of the Pacy Devtools is not open source. 
 
@@ -21,7 +21,7 @@ This is an MCP server that communicates with Pacy DevTools. It informs the devto
 
 Currently mostly a wrapper of `code-inspector`, but we chose to use it by wrapping it, since we override some default settings. Also, in case of using it for more features in the future.
 
-### `vscode`
+### `vscode-extension`
 
-This package is not included in the `pnpm-workspace.yaml`, because the `vsce package` command fails to run with the symlinked dependencies in the `node_modules`.
+This package is not included in the `pnpm-workspace.yaml`, because the `vsce package` command fails to run with the symlinked dependencies in the `node_modules`. We use `npm install` to install its dependencies
 
