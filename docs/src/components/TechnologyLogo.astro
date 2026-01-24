@@ -1,0 +1,118 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
+
+// Import all technology logo assets
+import claudeIcon from '../assets/images/agents/claude.svg'
+import vscodeIcon from '../assets/images/agents/vscode.svg'
+import cursorIcon from '../assets/images/agents/cursor.svg'
+import windsurfIcon from '../assets/images/agents/windsurf.svg'
+import clineIcon from '../assets/images/agents/cline.svg'
+import roocodeIcon from '../assets/images/agents/roocode.svg'
+import openaiIcon from '../assets/images/agents/openai.svg'
+
+import reactIcon from '../assets/images/react.svg'
+import vueIcon from '../assets/images/vue.png'
+import svelteIcon from '../assets/images/svelte.png'
+import nextjsIcon from '../assets/images/nextjs.svg'
+import remixIcon from '../assets/images/remix.svg'
+import preactIcon from '../assets/images/preact.svg'
+import nuxtIcon from '../assets/images/nuxt.svg'
+import astroIcon from '../assets/images/astro.svg'
+import solidIcon from '../assets/images/solid.png'
+import qwikIcon from '../assets/images/qwik.svg'
+
+import viteIcon from '../assets/images/bundlers/vite.svg'
+import webpackIcon from '../assets/images/bundlers/webpack.svg'
+import esbuildIcon from '../assets/images/bundlers/esbuild.svg'
+import turbopackIcon from '../assets/images/bundlers/turbopack.svg'
+import rspackIcon from '../assets/images/bundlers/rspack.svg'
+
+import chromeIcon from '../assets/images/browsers/chrome.svg'
+import edgeIcon from '../assets/images/browsers/edge.svg'
+import arcIcon from '../assets/images/browsers/arc.svg'
+import operaIcon from '../assets/images/browsers/opera.png'
+
+// Asset mapping for simple filename lookups
+const assetMap: Record<string, string> = {
+  'claude.svg': claudeIcon.src,
+  'vscode.svg': vscodeIcon.src,
+  'cursor.svg': cursorIcon.src,
+  'windsurf.svg': windsurfIcon.src,
+  'cline.svg': clineIcon.src,
+  'roocode.svg': roocodeIcon.src,
+  'openai.svg': openaiIcon.src,
+  'react.svg': reactIcon.src,
+  'vue.png': vueIcon.src,
+  'svelte.png': svelteIcon.src,
+  'nextjs.svg': nextjsIcon.src,
+  'remix.svg': remixIcon.src,
+  'preact.svg': preactIcon.src,
+  'nuxt.svg': nuxtIcon.src,
+  'astro.svg': astroIcon.src,
+  'solid.png': solidIcon.src,
+  'qwik.svg': qwikIcon.src,
+  'vite.svg': viteIcon.src,
+  'webpack.svg': webpackIcon.src,
+  'esbuild.svg': esbuildIcon.src,
+  'turbopack.svg': turbopackIcon.src,
+  'rspack.svg': rspackIcon.src,
+  'chrome.svg': chromeIcon.src,
+  'edge.svg': edgeIcon.src,
+  'arc.svg': arcIcon.src,
+  'opera.png': operaIcon.src,
+};
+
+// Resolve the source URL - if it's a simple filename, use the asset map
+const resolvedSrc = assetMap[src] || src;
+---
+
+<div class="technology-logo-container">
+  <div class="technology-logo-background">
+    <img src={resolvedSrc} alt={alt} class="technology-logo" />
+  </div>
+  <div class="technology-logo-caption">{alt}</div>
+</div>
+
+<style>
+.technology-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.technology-logo-background {
+  background: white;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.technology-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.technology-logo:hover {
+  opacity: 1;
+}
+
+.technology-logo-caption {
+  margin-top: 0rem;
+  font-size: 0.8rem;
+  color: var(--sl-color-gray-2);
+  text-align: center;
+}
+</style> 

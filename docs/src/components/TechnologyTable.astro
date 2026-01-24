@@ -1,0 +1,98 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={["technology-table-wrapper", className]}>
+  <table class="technology-table">
+    <slot />
+  </table>
+</div>
+
+<style>
+.technology-table-wrapper {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.technology-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+}
+
+.technology-table :global(tr) {
+  background: transparent !important;
+}
+
+.technology-table :global(.category-cell) {
+  padding: 1.5rem 1rem;
+  border-right: 1px solid var(--sl-color-gray-4);
+  vertical-align: top;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--sl-color-gray-2);
+  background: transparent;
+}
+
+.technology-table :global(.logos-cell) {
+  padding: 1.5rem 1rem;
+  background: transparent;
+  border-right: none;
+}
+
+.technology-table :global(tr:not(:last-child)) :global(.category-cell),
+.technology-table :global(tr:not(:last-child)) :global(.logos-cell) {
+  border-bottom: 1px solid var(--sl-color-gray-4);
+}
+
+.technology-table :global(.logos-wrapper) {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.technology-table :global(.technology-logo) {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.technology-table :global(.technology-logo:hover) {
+  opacity: 1;
+}
+
+/* Transform table layout on screens smaller than 480px */
+@media (max-width: 480px) {
+  .technology-table :global(tr) {
+    display: block;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+  
+  .technology-table :global(.category-cell) {
+    display: block;
+    padding: 0 0 1rem 0;
+    border-right: none;
+    border-bottom: 1px solid var(--sl-color-gray-4);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .technology-table :global(tr:not(:last-child)) :global(.logos-cell) {
+    border-bottom: none;
+  }
+
+  .technology-table :global(.logos-cell) {
+    padding: .5rem 0;
+  }
+}
+</style> 

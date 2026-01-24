@@ -1,0 +1,16 @@
+---
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+---
+
+<tr>
+  <td class="category-cell">{category}</td>
+  <td class="logos-cell">
+    <div class="logos-wrapper">
+      <slot />
+    </div>
+  </td>
+</tr> 
